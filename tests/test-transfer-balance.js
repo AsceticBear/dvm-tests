@@ -11,7 +11,7 @@ const privKey =
     '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342';
 
 
-describe('Test balance', function () {
+describe('Test Transfer Balance', function () {
 
     it('Get accounts balance before transfer', async function () {
         const balanceFrom = web3.utils.fromWei(

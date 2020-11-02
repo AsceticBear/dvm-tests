@@ -106,7 +106,7 @@ describe('Test Contract', function () {
       };
    }).timeout(80000);
 
-   it('Get Transaction By Hash', async function(){
+   it('Get Transaction By Hash', async function () {
       const tx = await web3.eth.getTransaction(reset_tx_hash);
       expect(tx.hash).to.equal(reset_tx_hash);
    });

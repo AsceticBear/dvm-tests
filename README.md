@@ -2,15 +2,22 @@
 
 # Test list
 
-- [x] (Check init account balances)
-- [x] (Check transfer result)
-- [ ] (Check constract deploy)
-- [ ] (Check block relevant rpc)
-- [ ] (Check rpc constants)
+- [x] (Transfer balance test)
+- [x] (Constract test)
+- [x] (Block rpc test)
+- [x] (Constant rpc test)
 
 # Usage
 
-1. Build and run darwinia-common node template.
+1. Install npm package
+
+```sh
+$ cd dvm-tests
+$ npm install --save web3
+$ npm install --save solc@0.6.10
+```
+
+2. Build and run darwinia-common node template.
 
 ```sh
 $ cd darwinia-common
@@ -18,7 +25,7 @@ $ cargo build --release
 $ ./target/release/node-template --dev --tmp
 ```
 
-2. Run dvm tests
+3. Run dvm tests
 
 example:
 

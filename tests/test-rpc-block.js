@@ -5,13 +5,13 @@ const web3 = new Web3('http://localhost:9933');
 
 describe('Test Block RPC', function () {
 
-    it('The block number should not be zero', async function(){
-        expect(await web3.eth.getBlockNumber()).to.not.equal(0);
-    });
+	it('The block number should not be zero', async function () {
+		expect(await web3.eth.getBlockNumber()).to.not.equal(0);
+	});
 
-    it('Should return the genesis block', async function(){
-        const block = await web3.eth.getBlock(0);
-        expect(block).to.include({
+	it('Should return the genesis block', async function () {
+		const block = await web3.eth.getBlock(0);
+		expect(block).to.include({
 			author: "0x0000000000000000000000000000000000000000",
 			difficulty: "0",
 			// extraData: "0x",
@@ -31,9 +31,9 @@ describe('Test Block RPC', function () {
 			//transactions: [],
 			transactionsRoot: "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
 			//uncles: []
-        });
-        
-        expect(block.transactions).to.be.a("array").empty;
+		});
+
+		expect(block.transactions).to.be.a("array").empty;
 		expect(block.uncles).to.be.a("array").empty;
 		expect(block.sealFields).to.eql([
 			"0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -42,36 +42,36 @@ describe('Test Block RPC', function () {
 		expect(block.hash).to.be.a("string").lengthOf(66);
 		expect(block.parentHash).to.be.a("string").lengthOf(66);
 		expect(block.timestamp).to.be.a("number");
-    });
+	});
 
-    it("get block by hash", async function() {
+	it("get block by hash", async function () {
 		const latest_block = await web3.eth.getBlock("latest");
 		const block = await web3.eth.getBlock(latest_block.hash);
 		expect(block.hash).to.be.eq(latest_block.hash);
-    });
-    
-    it("get block by number", async function() {
+	});
+
+	it("get block by number", async function () {
 		const block = await web3.eth.getBlock(1);
 		expect(block).not.null;
-    });
+	});
 
-    it("should include previous block hash as parent", async function () {
-        const block = await web3.eth.getBlock("latest");
-        
-        // previous block
-        const previous_block_number = block.number - 1;
-        const previous_block = await web3.eth.getBlock(previous_block_number);
+	it("should include previous block hash as parent", async function () {
+		const block = await web3.eth.getBlock("latest");
+
+		// previous block
+		const previous_block_number = block.number - 1;
+		const previous_block = await web3.eth.getBlock(previous_block_number);
 
 		expect(block.hash).to.not.equal(previous_block.hash);
 		expect(block.parentHash).to.equal(previous_block.hash);
-    });
-    
-    it("should have valid timestamp after block production", async function () {
-        const block = await web3.eth.getBlock("latest");
-        
-        // previous block
-        const previous_block_number = block.number - 1;
-        const previous_block = await web3.eth.getBlock(previous_block_number);
+	});
+
+	it("should have valid timestamp after block production", async function () {
+		const block = await web3.eth.getBlock("latest");
+
+		// previous block
+		const previous_block_number = block.number - 1;
+		const previous_block = await web3.eth.getBlock(previous_block_number);
 
 		expect(block.timestamp - previous_block.timestamp).to.be.eq(3);
 	});
