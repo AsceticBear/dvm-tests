@@ -2,11 +2,11 @@
 
 # Test list
 
--[x](Check init account balances)
--[x](Check transfer result)
--[](Check constract deploy)
--[](Check block relevant rpc)
--[](Check rpc constants)
+- [x] (Check init account balances)
+- [x] (Check transfer result)
+- [ ] (Check constract deploy)
+- [ ] (Check block relevant rpc)
+- [ ] (Check rpc constants)
 
 # Usage
 
