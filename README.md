@@ -30,5 +30,5 @@ $ ./target/release/node-template --dev --tmp
 example:
 
 ```sh
-$ ./node_modules/mocha/bin/mocha tests/test-balance.js
+$ ./node_modules/mocha/bin/mocha --recursive tests/
 ```

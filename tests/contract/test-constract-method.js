@@ -1,3 +1,6 @@
+// Run the transfer balance firstly.
+require("../test-transfer-balance.js");
+
 const expect = require('chai').expect;
 const Web3 = require('web3');
 const contractFile = require('./compile');
