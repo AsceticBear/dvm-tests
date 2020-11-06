@@ -52,7 +52,7 @@ describe('Test Block RPC', function () {
 
 	it("get block by number", async function () {
 		const block = await web3.eth.getBlock(1);
-		expect(block).not.null;
+		expect(block.number).to.equal(1);
 	});
 
 	it("should include previous block hash as parent", async function () {
