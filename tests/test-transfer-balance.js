@@ -23,8 +23,8 @@ describe('Test Transfer Balance', function () {
             'ether'
         );
 
-        expect(balanceFrom).to.be.equal('123456.123');
-        expect(balanceTo).to.be.equal('0');
+        expect(balanceFrom).to.be.equal('123.45678900000000009');
+        expect(balanceTo).to.be.equal('100');
     });
 
     it("Transfer balance", async function () {
@@ -32,7 +32,7 @@ describe('Test Transfer Balance', function () {
             {
                 from: addressFrom,
                 to: addressTo,
-                value: web3.utils.toWei('100', 'ether'),
+                value: web3.utils.toWei('10', 'ether'),
                 gas: '5000000000',
             },
             privKey
@@ -55,7 +55,7 @@ describe('Test Transfer Balance', function () {
             'ether'
         );
 
-        expect(balanceFrom).to.be.equal('123356.123');
-        expect(balanceTo).to.be.equal('100');
+        expect(balanceFrom).to.be.equal('113.45678900000000009');
+        expect(balanceTo).to.be.equal('110');
     });
 });

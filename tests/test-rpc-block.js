@@ -51,8 +51,8 @@ describe('Test Block RPC', function () {
 	});
 
 	it("get block by number", async function () {
-		const block = await web3.eth.getBlock(1);
-		expect(block.number).to.equal(1);
+		const block = await web3.eth.getBlock(3);
+		expect(block.number).to.equal(3);
 	});
 
 	it("should include previous block hash as parent", async function () {
