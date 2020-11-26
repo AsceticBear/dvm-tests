@@ -5,8 +5,8 @@ const web3 = new Web3('http://localhost:9933');
 
 const addressFrom = '0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b';
 // substrate: '5ELRpquT7C3mWtjeqFMYqgNbcNgWKSr3mYtVi1Uvtc2R7YEx';
-const addressTo = '0xB90168C8CBcd351D069ffFdA7B71cd846924d551';
-// substrate: '5ELRpquT7C3mWtjerqkd7LCXtabjBUBpnoAhmc1bs9rq8PG1';
+const addressTo = '0xAa01a1bEF0557fa9625581a293F3AA7770192632';
+// substrate: '2qSbd2umtD4KmV2X7kfttbP8HH4tzL5iMKETbjY2vYXMHHQs';
 const privKey =
     '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342';
 
@@ -24,7 +24,7 @@ describe('Test Transfer Balance', function () {
         );
 
         expect(balanceFrom).to.be.equal('123.45678900000000009');
-        expect(balanceTo).to.be.equal('100');
+        expect(balanceTo).to.be.equal('0');
     });
 
     it("Transfer balance", async function () {
@@ -56,6 +56,6 @@ describe('Test Transfer Balance', function () {
         );
 
         expect(balanceFrom).to.be.equal('113.45678900000000009');
-        expect(balanceTo).to.be.equal('110');
+        expect(balanceTo).to.be.equal('10');
     });
 });
