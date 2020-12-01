@@ -14,7 +14,7 @@ describe('Test Block RPC', function () {
 		expect(block).to.include({
 			author: "0x0000000000000000000000000000000000000000",
 			difficulty: "0",
-			// extraData: "0x",
+			extraData: "0x",
 			gasLimit: 0,
 			gasUsed: 0,
 			//hash: "0x14fe6f7c93597f79b901f8b5d7a84277a90915b8d355959b587e18de34f1dc17",
@@ -28,8 +28,8 @@ describe('Test Block RPC', function () {
 			stateRoot: "0x0000000000000000000000000000000000000000000000000000000000000000",
 			timestamp: 0,
 			totalDifficulty: null,
-			//transactions: [],
-			transactionsRoot: "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+			// transactions: [],
+			transactionsRoot: "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
 			//uncles: []
 		});
 
